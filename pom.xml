@@ -10,21 +10,62 @@
     <name>Shenandoah Visualizer</name>
 
     <prerequisites>
-        <maven>3.0</maven>
+<!--        <maven>3.0</maven>-->
+        <maven>3.8.1</maven>
     </prerequisites>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javac.target>1.8</javac.target>
+<!--        <javac.target>1.8</javac.target>-->
+<!--        <javac.target>1.15</javac.target>-->
         <uberjar.name>visualizer</uberjar.name>
+        <maven.compiler.release>15</maven.compiler.release>
     </properties>
 
     <build>
+<!--        <pluginManagement>-->
+<!--            <plugins>-->
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                    <version>3.1</version>-->
+<!--&lt;!&ndash;                    <version>3.8.1</version>&ndash;&gt;-->
+<!--                    <configuration>-->
+<!--                        <compilerVersion>${javac.target}</compilerVersion>-->
+<!--                        <source>${javac.target}</source>-->
+<!--                        <target>${javac.target}</target>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-shade-plugin</artifactId>-->
+<!--                    <version>2.2</version>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <phase>package</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>shade</goal>-->
+<!--                            </goals>-->
+<!--                            <configuration>-->
+<!--                                <finalName>${uberjar.name}</finalName>-->
+<!--                                <transformers>-->
+<!--                                    <transformer-->
+<!--                                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+<!--                                        <mainClass>org.openjdk.shenandoah.ShenandoahVisualizer</mainClass>-->
+<!--                                    </transformer>-->
+<!--                                </transformers>-->
+<!--                            </configuration>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
+<!--            </plugins>-->
+<!--        </pluginManagement>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+<!--                <version>3.1</version>-->
+                    <version>3.8.1</version>
                 <configuration>
                     <compilerVersion>${javac.target}</compilerVersion>
                     <source>${javac.target}</source>
@@ -54,6 +95,8 @@
                 </executions>
             </plugin>
         </plugins>
+
+
     </build>
 
     <dependencies>
